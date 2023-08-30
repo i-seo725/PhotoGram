@@ -20,7 +20,7 @@ protocol PassImageDataDelegate {
 
 
 class AddViewController: BaseViewController {
-
+    
     let mainView = Addview()
     
     //viewDidLoad보다 먼저 호출됨, 뷰 구성하는 메서드, 이 시점에 루트뷰 관련 요소 생성
@@ -32,12 +32,13 @@ class AddViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //첫번째 매개변수: 누가 처리할 것인지?
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
         
         ClassOpenExample.publicExample()
         ClassPublicExample.publicExample()
-        sesacShowActivityViewController(image: UIImage(systemName: "star")!, url: "hello", text: "hi")
+//        sesacShowActivityViewController(image: UIImage(systemName: "star")!, url: "hello", text: "hi")
     }
     
     
@@ -45,6 +46,7 @@ class AddViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print(#function)
+        APIService.shared.callRequest()
 //        NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
     }
     override func viewDidDisappear(_ animated: Bool) {
@@ -120,6 +122,8 @@ class AddViewController: BaseViewController {
         print("AddView Constraints")
     }
 
+    
+    
 }
 
 

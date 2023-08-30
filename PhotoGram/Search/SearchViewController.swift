@@ -20,6 +20,10 @@ class SearchViewController: BaseViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(recommendKeywordNotificationObserver(notification:)), name: NSNotification.Name("RecommendKeyword"), object: nil)
+        
+        //searchBar 보일 때 바로 키보드 뜸
+        mainView.searchBar.becomeFirstResponder()
+        mainView.searchBar.delegate = self
     }
     
     @objc func recommendKeywordNotificationObserver(notification: NSNotification) {
@@ -62,4 +66,12 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        mainView.searchBar.resignFirstResponder()   //키보드 내리기
+        
+    }
 }
