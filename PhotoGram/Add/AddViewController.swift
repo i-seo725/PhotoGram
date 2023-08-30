@@ -21,6 +21,7 @@ protocol PassImageDataDelegate {
 
 class AddViewController: BaseViewController {
     
+    let picker = UIImagePickerController()
     let mainView = Addview()
     
     //viewDidLoad보다 먼저 호출됨, 뷰 구성하는 메서드, 이 시점에 루트뷰 관련 요소 생성
@@ -36,8 +37,6 @@ class AddViewController: BaseViewController {
         //첫번째 매개변수: 누가 처리할 것인지?
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
         
-        ClassOpenExample.publicExample()
-        ClassPublicExample.publicExample()
 //        sesacShowActivityViewController(image: UIImage(systemName: "star")!, url: "hello", text: "hi")
     }
     
@@ -51,14 +50,62 @@ class AddViewController: BaseViewController {
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
         NotificationCenter.default.removeObserver(self, name: .selectImage, object: nil)
     }
+     
+    func makeAlert() {
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let gallery = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { action in
+            guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+                print("갤러리 사용 불가")
+                return
+            }
+            self.present(self.picker, animated: true)
+        }
+        let searchWeb = UIAlertAction(title: "웹에서 검색하기", style: .default) { action in
+            /*
+             let vc = TitleViewController()
+             
+             //closure 값 전달 3단계. 클로저 내용 쓰기
+             vc.completionHandler = { title, num, push in
+                 self.mainView.titleButton.setTitle(title, for: .normal)
+                 print("Completion Handler 함수", num, push)
+             }
+             navigationController?.pushViewController(vc, animated: true)
+             */
+            
+            let vc = SearchViewController()
+            vc.completionHandler = { text in
+                guard let url = URL(string: text) else { return }
+                
+                DispatchQueue.global().async {
+                    let data = try! Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        self.mainView.photoIamageView.image = UIImage(data: data)
+                    }
+                }
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(gallery)
+        alert.addAction(searchWeb)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
+        
+    }
     
-
     @objc func searchButtonClicked() {
-        let word = ["Apple", "Banana", "chicken", "Cake", "Blue"]
-        NotificationCenter.default.post(name: NSNotification.Name("RecommendKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
+        
+        makeAlert()
+        
+//        let word = ["Apple", "Banana", "chicken", "Cake", "Blue"]
+//        NotificationCenter.default.post(name: NSNotification.Name("RecommendKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
         
         navigationController?.pushViewController(SearchViewController(), animated: true)
     }
@@ -138,5 +185,19 @@ extension AddViewController: PassDataDelegate {
 extension AddViewController: PassImageDataDelegate {
     func receiveImage(image: UIImage) {
         mainView.photoIamageView.image = image
+    }
+}
+
+extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.mainView.photoIamageView.image = image
+            print(image)
+            dismiss(animated: true)
+        }
     }
 }

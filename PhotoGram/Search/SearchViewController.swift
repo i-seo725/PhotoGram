@@ -11,6 +11,7 @@ class SearchViewController: BaseViewController {
     
     let mainView = SearchView()
     let imageList = ["pencil", "star", "person", "star.fill", "xmark", "person.circle"]
+    var completionHandler: ((String) -> Void)?
     
     override func loadView() {
         self.view = mainView
@@ -71,6 +72,12 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = mainView.searchBar.text {
+            UnsplashNetworkManager.shared.callRequest(keyword: mainView.searchBar.text!) { json in
+                self.completionHandler?(json["results"][0]["urls"]["raw"].stringValue)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
         mainView.searchBar.resignFirstResponder()   //키보드 내리기
         
     }
