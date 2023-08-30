@@ -32,6 +32,11 @@ class SearchViewController: BaseViewController {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
     }
+    
+    var delegate: PassImageDataDelegate?
+    
+    
+    
 }
 
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -49,9 +54,11 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(imageList[indexPath.item])
         
-        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "은서"])
+//        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "은서"])
+        delegate?.receiveImage(image: UIImage(systemName: imageList[indexPath.item])!)
         
         dismiss(animated: true)
+        
     }
     
     

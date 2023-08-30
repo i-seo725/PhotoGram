@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F406C6A32A9D7BD600054800 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406C6A22A9D7BD600054800 /* Notification+Extension.swift */; };
+		F406C6A52A9D7C7800054800 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406C6A42A9D7C7800054800 /* DateView.swift */; };
+		F406C6A72A9D7DB600054800 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406C6A62A9D7DB600054800 /* DateViewController.swift */; };
+		F406C6A92A9D8E8C00054800 /* DateFormat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406C6A82A9D8E8C00054800 /* DateFormat+Extension.swift */; };
+		F406C6EE2A9D9BBA00054800 /* SeSACPhotoFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F406C6EA2A9D9B9000054800 /* SeSACPhotoFramework.framework */; };
+		F406C6EF2A9D9BBA00054800 /* SeSACPhotoFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F406C6EA2A9D9B9000054800 /* SeSACPhotoFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F406C6F22A9DB53A00054800 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406C6F12A9DB53A00054800 /* TitleViewController.swift */; };
+		F406C6F42A9DC11200054800 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406C6F32A9DC11200054800 /* TextViewController.swift */; };
+		F406C6F62A9DC74E00054800 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406C6F52A9DC74E00054800 /* WebViewController.swift */; };
 		F412508D2A9C1D5B00BB77E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412508C2A9C1D5B00BB77E7 /* AppDelegate.swift */; };
 		F412508F2A9C1D5B00BB77E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412508E2A9C1D5B00BB77E7 /* SceneDelegate.swift */; };
 		F41250912A9C1D5B00BB77E7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41250902A9C1D5B00BB77E7 /* AddViewController.swift */; };
@@ -22,7 +31,46 @@
 		F41250B32A9C37EE00BB77E7 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41250B22A9C37EE00BB77E7 /* SearchCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F406C6E92A9D9B9000054800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F406C6E42A9D9B9000054800 /* SeSACPhotoFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F406C6B42A9D92AD00054800;
+			remoteInfo = SeSACPhotoFramework;
+		};
+		F406C6EB2A9D9B9000054800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F406C6E42A9D9B9000054800 /* SeSACPhotoFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F406C6BE2A9D92AD00054800;
+			remoteInfo = SeSACPhotoFrameworkTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F406C6F02A9D9BBA00054800 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F406C6EF2A9D9BBA00054800 /* SeSACPhotoFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F406C6A22A9D7BD600054800 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		F406C6A42A9D7C7800054800 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		F406C6A62A9D7DB600054800 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		F406C6A82A9D8E8C00054800 /* DateFormat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormat+Extension.swift"; sourceTree = "<group>"; };
+		F406C6E42A9D9B9000054800 /* SeSACPhotoFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SeSACPhotoFramework.xcodeproj; path = ../SeSACPhotoFramework/SeSACPhotoFramework.xcodeproj; sourceTree = "<group>"; };
+		F406C6F12A9DB53A00054800 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		F406C6F32A9DC11200054800 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		F406C6F52A9DC74E00054800 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F41250892A9C1D5B00BB77E7 /* PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F412508C2A9C1D5B00BB77E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F412508E2A9C1D5B00BB77E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F406C6EE2A9D9BBA00054800 /* SeSACPhotoFramework.framework in Frameworks */,
 				F41250A22A9C1E1A00BB77E7 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,11 +100,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F406C6A12A9D7BBD00054800 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F406C6A22A9D7BD600054800 /* Notification+Extension.swift */,
+				F406C6A82A9D8E8C00054800 /* DateFormat+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F406C6E52A9D9B9000054800 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F406C6EA2A9D9B9000054800 /* SeSACPhotoFramework.framework */,
+				F406C6EC2A9D9B9000054800 /* SeSACPhotoFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F406C6ED2A9D9BBA00054800 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F41250802A9C1D5B00BB77E7 = {
 			isa = PBXGroup;
 			children = (
+				F406C6E42A9D9B9000054800 /* SeSACPhotoFramework.xcodeproj */,
 				F412508B2A9C1D5B00BB77E7 /* PhotoGram */,
 				F412508A2A9C1D5B00BB77E7 /* Products */,
+				F406C6ED2A9D9BBA00054800 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +146,7 @@
 		F412508B2A9C1D5B00BB77E7 /* PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				F406C6A12A9D7BBD00054800 /* Extension */,
 				F41250AB2A9C2FC000BB77E7 /* Add */,
 				F41250A62A9C271F00BB77E7 /* Search */,
 				F41250A32A9C23E700BB77E7 /* Base */,
@@ -78,6 +155,7 @@
 				F41250952A9C1D5C00BB77E7 /* Assets.xcassets */,
 				F41250972A9C1D5C00BB77E7 /* LaunchScreen.storyboard */,
 				F412509A2A9C1D5C00BB77E7 /* Info.plist */,
+				F406C6F52A9DC74E00054800 /* WebViewController.swift */,
 			);
 			path = PhotoGram;
 			sourceTree = "<group>";
@@ -107,6 +185,10 @@
 			children = (
 				F41250902A9C1D5B00BB77E7 /* AddViewController.swift */,
 				F41250AC2A9C2FF800BB77E7 /* AddView.swift */,
+				F406C6A42A9D7C7800054800 /* DateView.swift */,
+				F406C6A62A9D7DB600054800 /* DateViewController.swift */,
+				F406C6F12A9DB53A00054800 /* TitleViewController.swift */,
+				F406C6F32A9DC11200054800 /* TextViewController.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -121,6 +203,7 @@
 				F41250852A9C1D5B00BB77E7 /* Sources */,
 				F41250862A9C1D5B00BB77E7 /* Frameworks */,
 				F41250872A9C1D5B00BB77E7 /* Resources */,
+				F406C6F02A9D9BBA00054800 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,12 +246,35 @@
 			);
 			productRefGroup = F412508A2A9C1D5B00BB77E7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F406C6E52A9D9B9000054800 /* Products */;
+					ProjectRef = F406C6E42A9D9B9000054800 /* SeSACPhotoFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F41250882A9C1D5B00BB77E7 /* PhotoGram */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F406C6EA2A9D9B9000054800 /* SeSACPhotoFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SeSACPhotoFramework.framework;
+			remoteRef = F406C6E92A9D9B9000054800 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F406C6EC2A9D9B9000054800 /* SeSACPhotoFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SeSACPhotoFrameworkTests.xctest;
+			remoteRef = F406C6EB2A9D9B9000054800 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F41250872A9C1D5B00BB77E7 /* Resources */ = {
@@ -187,16 +293,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F406C6A32A9D7BD600054800 /* Notification+Extension.swift in Sources */,
 				F41250AD2A9C2FF800BB77E7 /* AddView.swift in Sources */,
 				F41250A82A9C274800BB77E7 /* SearchViewController.swift in Sources */,
 				F41250B12A9C365D00BB77E7 /* BaseCollectionViewCell.swift in Sources */,
+				F406C6A92A9D8E8C00054800 /* DateFormat+Extension.swift in Sources */,
 				F41250912A9C1D5B00BB77E7 /* AddViewController.swift in Sources */,
+				F406C6A72A9D7DB600054800 /* DateViewController.swift in Sources */,
+				F406C6F42A9DC11200054800 /* TextViewController.swift in Sources */,
 				F41250B32A9C37EE00BB77E7 /* SearchCollectionViewCell.swift in Sources */,
+				F406C6A52A9D7C7800054800 /* DateView.swift in Sources */,
 				F41250A52A9C241C00BB77E7 /* BaseViewController.swift in Sources */,
 				F41250AF2A9C337000BB77E7 /* SearchView.swift in Sources */,
 				F41250AA2A9C2EB700BB77E7 /* BaseView.swift in Sources */,
 				F412508D2A9C1D5B00BB77E7 /* AppDelegate.swift in Sources */,
 				F412508F2A9C1D5B00BB77E7 /* SceneDelegate.swift in Sources */,
+				F406C6F22A9DB53A00054800 /* TitleViewController.swift in Sources */,
+				F406C6F62A9DC74E00054800 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
