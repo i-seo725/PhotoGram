@@ -32,7 +32,9 @@ class AddViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+
         
         //첫번째 매개변수: 누가 처리할 것인지?
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
@@ -50,9 +52,7 @@ class AddViewController: BaseViewController {
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        picker.delegate = self
-        picker.sourceType = .photoLibrary
-        NotificationCenter.default.removeObserver(self, name: .selectImage, object: nil)
+                NotificationCenter.default.removeObserver(self, name: .selectImage, object: nil)
     }
      
     func makeAlert() {
