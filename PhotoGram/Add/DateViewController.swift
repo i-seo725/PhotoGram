@@ -25,6 +25,8 @@ class DateViewController: BaseViewController {
         
         delegate?.receiveDate(date: mainView.picker.date)
     }
-    
+    deinit {
+        print(self, "deinit")
+    }
     
 }

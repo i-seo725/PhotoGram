@@ -42,6 +42,9 @@ class AddViewController: BaseViewController {
 //        sesacShowActivityViewController(image: UIImage(systemName: "star")!, url: "hello", text: "hi")
     }
     
+    deinit {
+        print(self, "deinit")
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -159,8 +162,11 @@ class AddViewController: BaseViewController {
     
     @objc func dateButtonClicked() {
         //Protocol 값 전달 5. delegate 연결
-        let vc = DateViewController()
-        vc.delegate = self
+//        let vc = DateViewController()
+//        vc.delegate = self
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = HomeViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     

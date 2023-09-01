@@ -24,6 +24,15 @@ class SearchView: BaseView {
         return view
     }()
     
+    private func collectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        let size = UIScreen.main.bounds.width - 40 //self.frame.width - 40
+        layout.itemSize = CGSize(width: size / 4, height: size / 4)
+        return layout
+    }
+    
     override func configureView() {
         addSubview(searchBar)
         addSubview(collectionView)
@@ -38,12 +47,5 @@ class SearchView: BaseView {
         }
     }
     
-    private func collectionViewLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        let size = UIScreen.main.bounds.width - 40 //self.frame.width - 40
-        layout.itemSize = CGSize(width: size / 4, height: size / 4)
-        return layout
-    }
+   
 }

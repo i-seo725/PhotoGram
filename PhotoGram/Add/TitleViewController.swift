@@ -44,5 +44,7 @@ class TitleViewController: BaseViewController {
         completionHandler?(textField.text!, 100, false)
         
     }
-    
+    deinit {
+        print(self, "deinit")
+    }
 }
