@@ -34,7 +34,6 @@ class AddViewController: BaseViewController {
         super.viewDidLoad()
         picker.delegate = self
         picker.sourceType = .photoLibrary
-
         
         //첫번째 매개변수: 누가 처리할 것인지?
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
@@ -49,8 +48,6 @@ class AddViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(#function)
-        APIService.shared.callRequest()
 //        NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
     }
     override func viewDidDisappear(_ animated: Bool) {
